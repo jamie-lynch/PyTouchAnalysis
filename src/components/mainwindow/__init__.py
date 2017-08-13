@@ -1,5 +1,4 @@
 """
-
 PyTouchAnalysis
 Version 0.0
 (c) Jamie Lynch 2017
@@ -61,5 +60,5 @@ class MainWindow(QtGui.QMainWindow):
         file_path = '/Users/jamielynch/Documents/Projects/PyTouchAnalysis/test/go1080p25.mp4'
         self.player.load(file_path)
         self.player.play()
-
-
+        print(self.player.media_object.errorType())
+        print(self.player.media_object.errorString())
