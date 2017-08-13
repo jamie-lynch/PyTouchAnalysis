@@ -33,3 +33,11 @@ class Controls(QtGui.QWidget):
         # Create the buttons
         play = QtGui.QPushButton('play')
         pause = QtGui.QPushButton('pause')
+
+        # connect to the correct functions
+        play.clicked.connect(self.player.play)
+        pause.clicked.connect(self.player.pause)
+
+        # add buttons to the grid
+        grid.addWidget(play, 0, 1)
+        grid.addWidget(pause, 1, 1)

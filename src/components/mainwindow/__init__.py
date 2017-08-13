@@ -42,6 +42,9 @@ class MainWindow(QtGui.QMainWindow):
 
         # Create the player objects
         self.player = player.Player(main=self)
+        self.controls = player.Controls(main=self, player=self.player)
+        self.slider = player.Slider(main=self, object=self.player.media_object)
+
 
         # Create a proxy containing the video player
         video_proxy = QtGui.QGraphicsProxyWidget()
@@ -55,10 +58,11 @@ class MainWindow(QtGui.QMainWindow):
         self.scene.addItem(video_proxy)
         self.view.setScene(self.scene)
 
-        grid.addWidget(self.view, 0, 0)
+        # Add each of the components to the grid
+        grid.addWidget(self.view, 0, 1)
+        grid.addWidget(self.controls, 0, 0, 2, 1)
+        grid.addWidget(self.slider, 1, 1)
 
-        file_path = '/Users/jamielynch/Documents/Projects/PyTouchAnalysis/test/go1080p25.mp4'
+        file_path = '/Users/jamielynch/Documents/Projects/PyTouchAnalysis/test/MVI_0043.AVI'
         self.player.load(file_path)
         self.player.play()
-        print(self.player.media_object.errorType())
-        print(self.player.media_object.errorString())
