@@ -74,14 +74,14 @@ class MainWindow(QtGui.QMainWindow):
 
         # Add each of the components to the grid
         grid.addWidget(self.view, 0, 1, 3, 1)
-        grid.addWidget(self.content_box, 0, 3)
+        grid.addWidget(self.content_box, 3, 1)
         grid.addWidget(self.drawing_tools, 0, 0)
         grid.addWidget(self.slider, 1, 0)
         grid.addWidget(self.controls, 2, 0)
         grid.addWidget(logo_label, 3, 0)
 
         # Play a video for test
-        file_path = '/Users/jamielynch/Documents/Projects/PyTouchAnalysis/test/MVI_0043.AVI'
+        file_path = '/Users/jamielynch/Documents/Projects/PyTouchAnalysis/test/composite.avi'
         self.player.load(file_path)
         self.player.play()
 
