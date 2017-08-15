@@ -9,7 +9,7 @@ Version 0.0
 from PySide import QtGui, QtCore
 
 # Import Components
-from components import player
+from components import player, controls, sliders, drawing, content
 
 
 class MainWindow(QtGui.QMainWindow):
@@ -18,6 +18,9 @@ class MainWindow(QtGui.QMainWindow):
     def __init__(self):
         """Function to initialise the class"""
         super(MainWindow, self).__init__()
+
+        # Check the screen size
+        self.get_screen_geometry()
 
         # Create the user interface
         self.init_ui()
@@ -41,10 +44,9 @@ class MainWindow(QtGui.QMainWindow):
         self.scene = QtGui.QGraphicsScene()
 
         # Create the player objects
-        self.player = player.Player(main=self)
-        self.controls = player.Controls(main=self, player=self.player)
-        self.slider = player.Slider(main=self, object=self.player.media_object)
-
+        self.player = player.TPlayer(self)
+        self.controls = controls.TControls(self, self.player)
+        self.slider = sliders.TSliders(self, self.player.media_object)
 
         # Create a proxy containing the video player
         video_proxy = QtGui.QGraphicsProxyWidget()
@@ -58,11 +60,34 @@ class MainWindow(QtGui.QMainWindow):
         self.scene.addItem(video_proxy)
         self.view.setScene(self.scene)
 
-        # Add each of the components to the grid
-        grid.addWidget(self.view, 0, 1)
-        grid.addWidget(self.controls, 0, 0, 2, 1)
-        grid.addWidget(self.slider, 1, 1)
+        # Create the logo
+        logo_label = QtGui.QLabel()
+        logo_pixmap = QtGui.QPixmap('resources/lsu_media_logo.png')
+        logo_pixmap = logo_pixmap.scaledToWidth(0.1 * self.window_width, QtCore.Qt.SmoothTransformation)
+        logo_label.setPixmap(logo_pixmap)
 
+        # create and add the drawing buttons
+        self.drawing_tools = drawing.TDrawingTools(self)
+
+        # create and add the content widget
+        self.content_box = content.TContent(self)
+
+        # Add each of the components to the grid
+        grid.addWidget(self.view, 0, 1, 3, 1)
+        grid.addWidget(self.content_box, 0, 3)
+        grid.addWidget(self.drawing_tools, 0, 0)
+        grid.addWidget(self.slider, 1, 0)
+        grid.addWidget(self.controls, 2, 0)
+        grid.addWidget(logo_label, 3, 0)
+
+        # Play a video for test
         file_path = '/Users/jamielynch/Documents/Projects/PyTouchAnalysis/test/MVI_0043.AVI'
         self.player.load(file_path)
         self.player.play()
+
+    def get_screen_geometry(self):
+        """Function which gets and sets the screen size"""
+        desktop = QtGui.QDesktopWidget()
+        available = desktop.availableGeometry()
+        self.window_height = available.height()
+        self.window_width = available.width()

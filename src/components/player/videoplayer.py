@@ -9,12 +9,12 @@ Version 0.0
 from PySide.phonon import Phonon as Phonon
 
 
-class Player(Phonon.VideoWidget):
+class TPlayer(Phonon.VideoWidget):
     """Customer video player used by the PyTouchAnalysis program"""
 
     def __init__(self, main):
         """Function to initialise the class"""
-        super(Player, self).__init__()
+        super(TPlayer, self).__init__()
 
         # Reference to the main window
         self.main = main

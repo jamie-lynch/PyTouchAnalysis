@@ -6,4 +6,4 @@ Version 0.0
 
 """
 
-from components.player.videoplayer import TPlayer
+from components.controls.controls import TControls

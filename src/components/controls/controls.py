@@ -9,12 +9,12 @@ Version 0.0
 from PySide import QtGui
 
 
-class Controls(QtGui.QWidget):
+class TControls(QtGui.QWidget):
     """Customer video player used by the PyTouchAnalysis program"""
 
     def __init__(self, main, player):
         """Function to initialise the class"""
-        super(Controls, self).__init__()
+        super(TControls, self).__init__()
 
         # Set reference to main window and player
         self.main = main
@@ -31,13 +31,13 @@ class Controls(QtGui.QWidget):
         self.setLayout(grid)
 
         # Create the buttons
-        play = QtGui.QPushButton('play')
-        pause = QtGui.QPushButton('pause')
+        play = QtGui.QPushButton(QtGui.QIcon('resources/play.png'), '')
+        pause = QtGui.QPushButton(QtGui.QIcon('resources/pause.png'), '')
 
         # connect to the correct functions
         play.clicked.connect(self.player.play)
         pause.clicked.connect(self.player.pause)
 
         # add buttons to the grid
-        grid.addWidget(play, 0, 1)
-        grid.addWidget(pause, 1, 1)
+        grid.addWidget(play, 0, 0)
+        grid.addWidget(pause, 0, 1)
