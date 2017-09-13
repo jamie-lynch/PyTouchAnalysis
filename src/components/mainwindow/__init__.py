@@ -8,8 +8,7 @@ Version 0.0
 # Import Modules
 from PySide import QtGui, QtCore
 
-# Import Components
-from components import player, controls, sliders, drawing, content
+from components import video, drawing
 
 
 class MainWindow(QtGui.QMainWindow):
@@ -39,16 +38,15 @@ class MainWindow(QtGui.QMainWindow):
         self.setCentralWidget(central)
 
         # Create a graphics view and scene
-        # This is done to fool the video player into thinking its on the top
+        # This is done to fool the video video into thinking its on the top
         self.view = QtGui.QGraphicsView()
         self.scene = QtGui.QGraphicsScene()
 
-        # Create the player objects
-        self.player = player.TPlayer(self)
-        self.controls = controls.TControls(self, self.player)
-        self.slider = sliders.TSliders(self, self.player.media_object)
+        # Create the video objects
+        self.player = video.TPlayer(self)
+        self.controls = video.TVideoControlsFrame(self, self.player)
 
-        # Create a proxy containing the video player
+        # Create a proxy containing the video video
         video_proxy = QtGui.QGraphicsProxyWidget()
         video_proxy.setWidget(self.player)
         video_proxy.prepareGeometryChange()
@@ -63,22 +61,26 @@ class MainWindow(QtGui.QMainWindow):
         # Create the logo
         logo_label = QtGui.QLabel()
         logo_pixmap = QtGui.QPixmap('resources/lsu_media_logo.png')
-        logo_pixmap = logo_pixmap.scaledToWidth(0.1 * self.window_width, QtCore.Qt.SmoothTransformation)
+        logo_pixmap = logo_pixmap.scaledToWidth(0.08 * self.window_width, QtCore.Qt.SmoothTransformation)
         logo_label.setPixmap(logo_pixmap)
 
         # create and add the drawing buttons
-        self.drawing_tools = drawing.TDrawingTools(self)
+        self.drawing_tools = drawing.TDrawingControlsFrame(self)
 
         # create and add the content widget
-        self.content_box = content.TContent(self)
+        self.content_box = video.TContentFrame(self)
 
         # Add each of the components to the grid
-        grid.addWidget(self.view, 0, 1, 3, 1)
-        grid.addWidget(self.content_box, 3, 1)
         grid.addWidget(self.drawing_tools, 0, 0)
-        grid.addWidget(self.slider, 1, 0)
-        grid.addWidget(self.controls, 2, 0)
-        grid.addWidget(logo_label, 3, 0)
+        grid.addWidget(self.controls, 1, 0)
+        grid.addWidget(logo_label, 2, 0)
+        grid.addWidget(self.view, 0, 1, 2, 1)
+        grid.addWidget(self.content_box, 2, 1)
+
+        # set the row stretches so that the button row stays smaller
+        grid.setRowStretch(0, 2)
+        grid.setRowStretch(1, 2)
+        grid.setRowStretch(2, 1)
 
         # Play a video for test
         file_path = '/Users/jamielynch/Documents/Projects/PyTouchAnalysis/test/composite.avi'
