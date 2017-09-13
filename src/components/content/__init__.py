@@ -7,13 +7,13 @@ Version 0.0
 """
 
 # Modules
-from PySide import QtGui
+from PySide import QtGui, QtCore
 
 # Components
 from components.content.tcontentitem import TContentItem
 
 
-class TContent(QtGui.QWidget):
+class TContent(QtGui.QFrame):
     """Custom widget which holds all of the available content"""
 
     def __init__(self, main):
@@ -22,6 +22,10 @@ class TContent(QtGui.QWidget):
 
         # reference to main
         self.main = main
+
+        # setup the frame type
+        self.setFrameShape(QtGui.QFrame.StyledPanel)
+        self.setFrameShadow(QtGui.QFrame.Plain)
 
         # reference to each of the elements included
         self.elements = []
@@ -61,3 +65,6 @@ class TContent(QtGui.QWidget):
         else:
             self.hbox.addWidget(new_item)
             self.elements.append(new_item)
+
+        # set the item to be centre aligned
+        self.hbox.setAlignment(new_item, QtCore.Qt.AlignCenter)
