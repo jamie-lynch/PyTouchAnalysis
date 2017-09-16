@@ -41,6 +41,7 @@ class TDrawingControlsFrame(QtGui.QFrame):
                  'multipoint_arc', 'multipoint_square_outline', 'multipoint_square_filled',
                  'free']
         icons = ['clear', 'undo']
+        actions = [self.main.canvas.clear, self.main.canvas.undo]
 
         # Create the buttons and add them to the grid
         for num, icon in enumerate(clickable_icons):
@@ -51,11 +52,11 @@ class TDrawingControlsFrame(QtGui.QFrame):
             grid.addWidget(button, num // 3, num % 3)
 
         for num, icon in enumerate(icons):
-            num += len(clickable_icons)
-            button = TDrawingControlButton(QtGui.QIcon('resources/icons/{}.png'.format(icon)), '', self.stub, self)
+            button = TDrawingControlButton(QtGui.QIcon('resources/icons/{}.png'.format(icon)), '', actions[num], self)
             # add to the grid in 3 wide rows
             # num // 3 -> 0, 0, 0, 1, 1, 1, etc...
             # num % 3 -> 0, 1, 2, 0, 1, 2, etc...
+            num += len(clickable_icons)
             grid.addWidget(button, num // 3, num % 3)
 
     def set_current_button(self, button):

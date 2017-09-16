@@ -7,3 +7,4 @@ Version 0.0
 """
 
 from components.drawing.controls import TDrawingControlsFrame
+from components.drawing.canvas import TCanvas

@@ -18,6 +18,12 @@ class MainWindow(QtGui.QMainWindow):
         """Function to initialise the class"""
         super(MainWindow, self).__init__()
 
+        # Set attributes
+        self.player = None
+        self.canvas = None
+        self.window_width = None
+        self.window_height = None
+
         # Check the screen size
         self.get_screen_geometry()
 
@@ -39,12 +45,12 @@ class MainWindow(QtGui.QMainWindow):
 
         # Create a graphics view and scene
         # This is done to fool the video video into thinking its on the top
-        self.view = QtGui.QGraphicsView()
-        self.scene = QtGui.QGraphicsScene()
+        view = QtGui.QGraphicsView()
+        scene = QtGui.QGraphicsScene()
 
         # Create the video objects
         self.player = video.TPlayer(self)
-        self.controls = video.TVideoControlsFrame(self, self.player)
+        controls = video.TVideoControlsFrame(self, self.player)
 
         # Create a proxy containing the video video
         video_proxy = QtGui.QGraphicsProxyWidget()
@@ -54,9 +60,15 @@ class MainWindow(QtGui.QMainWindow):
         video_proxy.setPos(0, 0)
         video_proxy.show()
 
-        # Add the video proxy to the scene
-        self.scene.addItem(video_proxy)
-        self.view.setScene(self.scene)
+        # Create a canvas
+        self.canvas = drawing.TCanvas(self)
+
+        # self.view.fitInView(self.proxy, QtCore.Qt.KeepAspectRatio)
+
+        # Add the video proxy and the canvas to the scene
+        scene.addItem(video_proxy)
+        scene.addWidget(self.canvas)
+        view.setScene(scene)
 
         # Create the logo
         logo_label = QtGui.QLabel()
@@ -65,17 +77,20 @@ class MainWindow(QtGui.QMainWindow):
         logo_label.setPixmap(logo_pixmap)
 
         # create and add the drawing buttons
-        self.drawing_tools = drawing.TDrawingControlsFrame(self)
+        drawing_tools = drawing.TDrawingControlsFrame(self)
 
         # create and add the content widget
-        self.content_box = video.TContentFrame(self)
+        content_box = video.TContentFrame(self)
 
         # Add each of the components to the grid
-        grid.addWidget(self.drawing_tools, 0, 0)
-        grid.addWidget(self.controls, 1, 0)
+        grid.addWidget(drawing_tools, 0, 0)
+        grid.addWidget(controls, 1, 0)
         grid.addWidget(logo_label, 2, 0)
-        grid.addWidget(self.view, 0, 1, 2, 1)
-        grid.addWidget(self.content_box, 2, 1)
+        grid.addWidget(view, 0, 1, 2, 1)
+        grid.addWidget(content_box, 2, 1)
+
+        # centre the logo
+        grid.setAlignment(logo_label, QtCore.Qt.AlignCenter)
 
         # set the row stretches so that the button row stays smaller
         grid.setRowStretch(0, 2)
