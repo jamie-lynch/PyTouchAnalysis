@@ -20,6 +20,9 @@ class TDrawingControlsFrame(QtGui.QFrame):
         # Set reference to main window and video
         self.main = main
 
+        # set some other parameters
+        self.currentButton = None
+
         # set the frame style
         self.setFrameShape(QtGui.QFrame.StyledPanel)
         self.setFrameShadow(QtGui.QFrame.Plain)
@@ -38,12 +41,10 @@ class TDrawingControlsFrame(QtGui.QFrame):
                  'multipoint_arc', 'multipoint_square_outline', 'multipoint_square_filled',
                  'free']
         icons = ['clear', 'undo']
-        buttons = []
 
         # Create the buttons and add them to the grid
         for num, icon in enumerate(clickable_icons):
-            button = TDrawingControlButton(QtGui.QIcon('resources/icons/{}.png'.format(icon)), '', self.stub, True)
-            buttons.append(button)
+            button = TDrawingControlButton(QtGui.QIcon('resources/icons/{}.png'.format(icon)), '', self.stub, self, True)
             # add to the grid in 3 wide rows
             # num // 3 -> 0, 0, 0, 1, 1, 1, etc...
             # num % 3 -> 0, 1, 2, 0, 1, 2, etc...
@@ -51,14 +52,21 @@ class TDrawingControlsFrame(QtGui.QFrame):
 
         for num, icon in enumerate(icons):
             num += len(clickable_icons)
-            button = TDrawingControlButton(QtGui.QIcon('resources/icons/{}.png'.format(icon)), '', self.stub)
-            buttons.append(button)
+            button = TDrawingControlButton(QtGui.QIcon('resources/icons/{}.png'.format(icon)), '', self.stub, self)
             # add to the grid in 3 wide rows
             # num // 3 -> 0, 0, 0, 1, 1, 1, etc...
             # num % 3 -> 0, 1, 2, 0, 1, 2, etc...
             grid.addWidget(button, num // 3, num % 3)
 
+    def set_current_button(self, button):
+        """Function to set the current button and un-check the current one"""
+        if self.currentButton:
+            self.currentButton.setChecked(False)
+
+        self.currentButton = button
+
     def stub(self):
         """Stubbed function to get things working"""
         # TODO: Remove
+        print('clicked')
         return
