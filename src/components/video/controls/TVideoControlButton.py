@@ -15,4 +15,8 @@ class TVideoControlButton(QtGui.QPushButton):
     def __init__(self, icon, label, action):
         """Function to initialise the class"""
         super(TVideoControlButton, self).__init__(icon, label)
+
+        # set the function to be called on click
         self.clicked.connect(action)
+
+

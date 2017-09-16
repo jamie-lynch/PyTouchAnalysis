@@ -34,13 +34,23 @@ class TDrawingControlsFrame(QtGui.QFrame):
         grid = QtGui.QGridLayout()
         self.setLayout(grid)
 
-        icons = ['straight_arrow', 'freehand_arrow', 'line',
+        clickable_icons = ['straight_arrow', 'freehand_arrow', 'line',
                  'multipoint_arc', 'multipoint_square_outline', 'multipoint_square_filled',
-                 'free', 'clear', 'undo']
+                 'free']
+        icons = ['clear', 'undo']
         buttons = []
 
         # Create the buttons and add them to the grid
+        for num, icon in enumerate(clickable_icons):
+            button = TDrawingControlButton(QtGui.QIcon('resources/icons/{}.png'.format(icon)), '', self.stub, True)
+            buttons.append(button)
+            # add to the grid in 3 wide rows
+            # num // 3 -> 0, 0, 0, 1, 1, 1, etc...
+            # num % 3 -> 0, 1, 2, 0, 1, 2, etc...
+            grid.addWidget(button, num // 3, num % 3)
+
         for num, icon in enumerate(icons):
+            num += len(clickable_icons)
             button = TDrawingControlButton(QtGui.QIcon('resources/icons/{}.png'.format(icon)), '', self.stub)
             buttons.append(button)
             # add to the grid in 3 wide rows
