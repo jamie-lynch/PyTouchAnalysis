@@ -7,6 +7,7 @@ Version 0.0
 """
 
 from PySide import QtGui, QtCore
+from components.drawing import painters
 
 
 class TCanvas(QtGui.QWidget):
@@ -20,6 +21,16 @@ class TCanvas(QtGui.QWidget):
 
         # set the attributes
         self.items = []
+        self.custom_painters = {
+            'straight_arrow': painters.TStraightArrayPainter(self),
+            'freehand_arrow': painters.TFreehandArrowPainter(self),
+            'line': painters.TLinePainter(self),
+            'multipoint_arc': painters.TMultipointArcPainter(self),
+            'multipoint_square_outline': painters.TMultipointSquareOutlinePainter(self),
+            'multipoint_square_filled': painters.TMultipointSquareFilledPainter(self),
+            'free': painters.TFreePainter(self)
+        }
+        self.current_painter = None
 
         # set the initial point
         self.point = QtCore.QPoint(0, 0)
@@ -31,16 +42,20 @@ class TCanvas(QtGui.QWidget):
         qp = QtGui.QPainter()
         qp.begin(self)
         for item in self.items:
-            self.drawText(qp, item)
+            self.custom_painters[item['painter']].draw(qp, item)
         qp.end()
 
-    def drawText(self, qp, item):
-        qp.setPen(QtGui.QColor(168, 34, 3))
-        qp.drawText(item, 'TADA!')
-
     def mousePressEvent(self, event):
-        self.items.append(QtCore.QPoint(event.x(), event.y()))
-        self.repaint()
+        if self.current_painter:
+            self.current_painter.add(event)
+            self.repaint()
+
+    def set_current_painter(self, painter):
+        """Function which sets the current painter"""
+        if self.current_painter and painter == self.current_painter.name:
+            self.current_painter = None
+        else:
+            self.current_painter = self.custom_painters[painter]
 
     def undo(self):
         """Function which undoes the last item added"""

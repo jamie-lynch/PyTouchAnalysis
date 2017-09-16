@@ -45,7 +45,7 @@ class TDrawingControlsFrame(QtGui.QFrame):
 
         # Create the buttons and add them to the grid
         for num, icon in enumerate(clickable_icons):
-            button = TDrawingControlButton(QtGui.QIcon('resources/icons/{}.png'.format(icon)), '', self.stub, self, True)
+            button = TDrawingControlButton(QtGui.QIcon('resources/icons/{}.png'.format(icon)), '', lambda i=icon: self.main.canvas.set_current_painter(i), self, True)
             # add to the grid in 3 wide rows
             # num // 3 -> 0, 0, 0, 1, 1, 1, etc...
             # num % 3 -> 0, 1, 2, 0, 1, 2, etc...
@@ -65,9 +65,3 @@ class TDrawingControlsFrame(QtGui.QFrame):
             self.currentButton.setChecked(False)
 
         self.currentButton = button
-
-    def stub(self):
-        """Stubbed function to get things working"""
-        # TODO: Remove
-        print('clicked')
-        return
