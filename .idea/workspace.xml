@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5388f44-3a6d-4702-9776-fde32f774d72" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PyTouchAnalysis.iml" afterPath="$PROJECT_DIR$/.idea/PyTouchAnalysis.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlButton.py" afterPath="$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlButton.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlsFrame.py" afterPath="$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlsFrame.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/video/controls/TVideoControlButton.py" afterPath="$PROJECT_DIR$/src/components/video/controls/TVideoControlButton.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/video/controls/TScrubSlider.py" afterPath="$PROJECT_DIR$/src/components/video/controls/TScrubSlider.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/video/controls/TSpeedSlider.py" afterPath="$PROJECT_DIR$/src/components/video/controls/TSpeedSlider.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,23 +23,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TDrawingControlsFrame.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlsFrame.py">
+      <file leaf-file-name="TScrubSlider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/video/controls/TScrubSlider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+            <state relative-caret-position="399">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding>
-                <element signature="e#60#84#0" expanded="true" />
+                <element signature="e#621#1220#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TDrawingControlButton.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlButton.py">
+      <file leaf-file-name="TSpeedSlider.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/video/controls/TSpeedSlider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+            <state relative-caret-position="433">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,11 +92,14 @@
         <option value="$PROJECT_DIR$/src/components/video/content/__init__.py" />
         <option value="$PROJECT_DIR$/src/components/drawing/__init__.py" />
         <option value="$PROJECT_DIR$/src/components/drawing/controls/__init__.py" />
-        <option value="$PROJECT_DIR$/src/components/mainwindow/__init__.py" />
         <option value="$PROJECT_DIR$/src/components/video/controls/TVideoControlsFrame.py" />
         <option value="$PROJECT_DIR$/src/components/video/controls/TVideoControlButton.py" />
-        <option value="$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlButton.py" />
+        <option value="$PROJECT_DIR$/src/components/drawing/canvas/__init__.py" />
         <option value="$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlsFrame.py" />
+        <option value="$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlButton.py" />
+        <option value="$PROJECT_DIR$/src/components/mainwindow/__init__.py" />
+        <option value="$PROJECT_DIR$/src/components/video/controls/TScrubSlider.py" />
+        <option value="$PROJECT_DIR$/src/components/video/controls/TSpeedSlider.py" />
       </list>
     </option>
   </component>
@@ -215,6 +215,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="icons" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyTouchAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PyTouchAnalysis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -285,33 +307,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="drawing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PyTouchAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PyTouchAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controls" />
+              <option name="myItemId" value="mainwindow" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -566,7 +562,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -575,7 +573,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#76#108#0" expanded="true" />
+            <element signature="e#76#108#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -593,7 +591,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#76#108#0" expanded="true" />
+            <element signature="e#76#108#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -610,7 +608,7 @@
         <state relative-caret-position="555">
           <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
           <folding>
-            <element signature="e#76#108#0" expanded="true" />
+            <element signature="e#76#108#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -627,6 +625,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -635,7 +634,7 @@
         <state relative-caret-position="735">
           <caret line="49" column="56" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
           <folding>
-            <element signature="e#76#108#0" expanded="true" />
+            <element signature="e#76#108#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -672,24 +671,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/controls/seekslider.py" />
-    <entry file="file://$PROJECT_DIR$/src/components/video/controls/TSpeedSlider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/video/content/TContentItem.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="36" column="64" selection-start-line="36" selection-start-column="64" selection-end-line="36" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/video/controls/TScrubSlider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -732,16 +717,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/mainwindow/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#76#108#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -765,7 +741,7 @@
         <state relative-caret-position="481">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
-            <element signature="e#60#84#0" expanded="true" />
+            <element signature="e#60#84#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -778,21 +754,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlButton.py">
+    <entry file="file://$PROJECT_DIR$/src/components/drawing/canvas/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        <state relative-caret-position="272">
+          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlsFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+        <state relative-caret-position="1011">
+          <caret line="62" column="29" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
           <folding>
             <element signature="e#60#84#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/drawing/controls/TDrawingControlButton.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/mainwindow/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="60" column="8" selection-start-line="60" selection-start-column="8" selection-end-line="64" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/video/controls/TScrubSlider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="e#621#1220#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/video/controls/TSpeedSlider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
